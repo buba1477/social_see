@@ -1,6 +1,4 @@
-header img {
-  width: 150px;
-}
+
 
 .app-wripper{
   display: grid;
@@ -13,18 +11,4 @@ header img {
   'classNav appContent';
   width: 1200px;
   margin: 0 auto;
-}
-
-.appContent{
-grid-area: appContent;
-background-color: rgb(206, 144, 94)
-}
-.classNav{
-grid-area: classNav;
-background-color: rgb(126, 179, 110)
-}
-
-.header{
-grid-area: header;
-background-color: rgb(199, 153, 197)
 }

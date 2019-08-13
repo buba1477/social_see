@@ -1,0 +1,14 @@
+
+
+
+
+.header img {
+  width: 150px;
+}
+
+
+
+.header{
+  grid-area: header;
+  background-color: rgb(199, 153, 197)
+  }
