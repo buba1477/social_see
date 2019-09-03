@@ -6,9 +6,16 @@
   grid-auto-columns: 2fr 10fr;
   grid-gap: 10px;
 
-  grid-template-areas: 
-  'header header'
-  'classNav appContent';
+  grid-template-areas:
+          'header header'
+          'classNav appContent';
   width: 1200px;
   margin: 0 auto;
+}
+.app-wripper-content{
+
+  grid-area: appContent;
+  background-color: rgb(206, 144, 94)
+
+
 }

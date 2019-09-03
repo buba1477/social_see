@@ -1,18 +1,16 @@
 import React from 'react';
 import s from './Content.module.css'
 import MyPosts from './MyPosts/MyPosts';
+import ProfileInfo from './ProfileInfo/ProfileInfo';
 
-const Content = () => {
+
+const Content = (props) => {
     return (
         <div className={s.appContent}>
-            <div>
-                <img src="https://cdn.wallpapersafari.com/60/61/1njsfA.jpeg" ></img>
-            </div>
 
-            <div>
-                avatar
-                </div>
-            <MyPosts />
+            <ProfileInfo />
+            <MyPosts mypost = {props.contpost} handRes={props.handRes}/>
+
         </div>
     )
 };

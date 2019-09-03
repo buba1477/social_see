@@ -1,12 +1,21 @@
 
 .classNav{
     grid-area: classNav;
-    background-color: rgb(126, 179, 110)
+    background-color: rgb(126, 179, 110);
+    padding: 15px;
     }
-.items {
-    color: white;
+
+.items a {
+    color: aliceblue;
+    text-decoration: none;
+}
+.items a.activel {
+    color: gold;
 }
 
-.items.active {
-    color: blue;
+.ite {
+    color: aliceblue;
+    text-decoration: none;
+    font-size: 30px;
+
 }
