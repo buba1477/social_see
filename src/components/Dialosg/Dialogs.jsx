@@ -24,7 +24,7 @@ const Dialogs = (props2) => {
     let valMess = React.createRef();
     let pushMes = () => {
         let text = valMess.current.value;
-       console.log(typeof(text));
+        console.log(typeof (text));
     }
 
     return (

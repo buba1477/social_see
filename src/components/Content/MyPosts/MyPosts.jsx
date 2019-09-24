@@ -11,21 +11,22 @@ const MyPosts = (props) => {
         }
     );
 
-
-
     let newRefrea = React.createRef();
 
     let hanlerRef = () => {
-
-        let text = newRefrea.current.value;
-        props.handRes(text);
-        newRefrea.current.value = '';
+        debugger;
+        props.handRes();
     }
 
+    let onTextChange = () => {
+
+        let text = newRefrea.current.value;
+        props.handleText(text);
+    }
     return (
         <div className={s.postHead}>
             <div>
-                <textarea ref={newRefrea}></textarea>
+                <textarea onChange={onTextChange} ref={newRefrea} value={props.textareas}></textarea>
             </div>
             <div>
                 <button onClick={hanlerRef}>My posts</button>

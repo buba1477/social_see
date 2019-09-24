@@ -1,7 +1,23 @@
 import React from 'react';
-import state from './redux/state';
-import {rerenderEmpireTrtt} from "./render";
+import store from './redux/state';
+import ReactDOM from 'react-dom';
+import './index.css';
+import App from './App';
+import {BrowserRouter} from "react-router-dom"
 
 
-rerenderEmpireTrtt(state);
+let rerenderEmpireTrtt = (store) => {
+    ReactDOM.render(
+        <BrowserRouter>
+        <App appState={store} handRes={store.handelPush} handleText={store.changeNevText}/>,
+        </BrowserRouter>,
+        document.getElementById('root')
+    );
+
+
+}
+
+store.subScribe(rerenderEmpireTrtt);
+
+rerenderEmpireTrtt(store.getState());
 

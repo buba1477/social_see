@@ -14,7 +14,8 @@ const App = (props) => {
                 <Nav/>
                 <div className='app-wripper-content'>
 
-                    <Route path='/profile' render = {() => <Content contpost = {props.appState.dialogsPage.MyPostsArr} handRes = {props.handRes}/> } />
+                    <Route path='/profile' render = {() =>
+                        <Content contpost = {props.appState.dialogsPage.MyPostsArr} handRes = {props.handRes} textareas ={props.appState.dialogsPage.newPostText} handleText = {props.handleText}/> } />
                     <Route path='/messages' render = {() =>
                         <Dialogs dialong = {props.appState.profilePage.DialosArr} message1 = {props.appState.profilePage.MesagesArr} />} />
 

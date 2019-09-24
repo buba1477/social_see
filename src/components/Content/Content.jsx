@@ -9,7 +9,7 @@ const Content = (props) => {
         <div className={s.appContent}>
 
             <ProfileInfo />
-            <MyPosts mypost = {props.contpost} handRes={props.handRes}/>
+            <MyPosts mypost = {props.contpost} handRes={props.handRes} textareas={props.textareas} handleText ={props.handleText}/>
 
         </div>
     )
