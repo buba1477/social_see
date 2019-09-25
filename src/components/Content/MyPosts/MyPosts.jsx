@@ -14,7 +14,7 @@ const MyPosts = (props) => {
     let newRefrea = React.createRef();
 
     let hanlerRef = () => {
-        debugger;
+
         props.handRes();
     }
 

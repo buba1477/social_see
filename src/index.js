@@ -1,23 +1,24 @@
 import React from 'react';
-import store from './redux/state';
+import stor from './redux/state';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import {BrowserRouter} from "react-router-dom"
 
 
-let rerenderEmpireTrtt = (store) => {
+
+let rerenderEmpireTrtt = (state) => {
+    debugger
     ReactDOM.render(
-        <BrowserRouter>
-        <App appState={store} handRes={store.handelPush} handleText={store.changeNevText}/>,
-        </BrowserRouter>,
+       
+        <App appState={state} handRes={stor.handelPush.bind(stor)} handleText={stor.changeNevText.bind(stor)}/>,
+        
         document.getElementById('root')
     );
 
 
 }
 
-store.subScribe(rerenderEmpireTrtt);
 
-rerenderEmpireTrtt(store.getState());
+rerenderEmpireTrtt(stor.getState());
 
+stor.subScribe(rerenderEmpireTrtt);

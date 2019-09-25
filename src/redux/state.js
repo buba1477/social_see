@@ -1,6 +1,6 @@
 
 
-let store = {
+let stor = {
     _state: {
         dialogsPage: {
             MyPostsArr: [
@@ -26,38 +26,37 @@ let store = {
                 { inner: 'yo', id: 5 },
             ],
         },
-
-
+        
     },
     getState() {
-        
         return this._state
     },
-    _rerenderEmpireTrtt() {
+  
+    rerenderEmpireTrtt() {
         console.log('trahs')
     },
     handelPush() {
 
-        let result = { message: this._state.dialogsPage.newPostText, id: 6, lickesCount: '14' };
-        this._state.dialogsPage.MyPostsArr.push(result);
-        this._state.dialogsPage.newPostText = '';
-        this.rerenderEmpireTrtt(this._state);
+        let result = { message: this.getState().dialogsPage.newPostText, id: 6, lickesCount: '14' };
+        this.getState().dialogsPage.MyPostsArr.push(result);
+        this.getState().dialogsPage.newPostText = '';
+        this.rerenderEmpireTrtt(this.getState());
     },
     changeNevText(text) {
-        this._state.dialogsPage.newPostText = text;
-        this._rerenderEmpireTrtt(this._state);
+        this.getState().dialogsPage.newPostText = text;
+        this.rerenderEmpireTrtt(this.getState());
     },
     subScribe(observer) {
-        this._rerenderEmpireTrtt = observer;
+        this.rerenderEmpireTrtt = observer;
     }
 }
 
 
 
-window.state = store;
+window.state = stor;
 
 
 
 
 
-export default store;
+export default stor;
