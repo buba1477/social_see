@@ -6,7 +6,7 @@ const ProfileInfo = (props) => {
     return (
         <div className={s.appContent}>
             <div>
-                <img src="https://i.pinimg.com/originals/c0/b5/6c/c0b56cf975bae408b480a38f94bcbcee.jpg"></img>
+                <img src="https://bipbap.ru/wp-content/uploads/2017/04/1-14.jpg"></img>
 
             </div>
 

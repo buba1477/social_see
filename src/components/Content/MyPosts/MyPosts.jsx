@@ -1,6 +1,8 @@
 import React from 'react';
 import s from './MyPosts.module.css'
 import Post from './Post/Post';
+import {addPushCreateAction} from './../../../redux/state';
+import {addChangeCreateAction} from './../../../redux/state';
 
 const MyPosts = (props) => {
 
@@ -11,17 +13,18 @@ const MyPosts = (props) => {
         }
     );
 
-    let newRefrea = React.createRef();
+    
 
     let hanlerRef = () => {
 
-        props.handRes();
+        props.dispatch(addPushCreateAction());
     }
 
+    let newRefrea = React.createRef();
     let onTextChange = () => {
 
         let text = newRefrea.current.value;
-        props.handleText(text);
+        props.dispatch(addChangeCreateAction(text));
     }
     return (
         <div className={s.postHead}>

@@ -1,5 +1,8 @@
 
-
+const ADD_PUSH = 'ADD-PUSH';
+const ADD_CHANGE = 'ADD-CHANGE';
+const ADD_CHANGE_DIALOG = 'ADD-CHANGE-DIALOG';
+const ADD_PUSH_DIALOG = 'ADD-PUSH-DIALOG';
 let stor = {
     _state: {
         dialogsPage: {
@@ -25,6 +28,7 @@ let stor = {
                 { inner: 'you', id: 4 },
                 { inner: 'yo', id: 5 },
             ],
+            newPostTextDialogs: 'Приветик'
         },
         
     },
@@ -32,26 +36,57 @@ let stor = {
         return this._state
     },
   
-    rerenderEmpireTrtt() {
+    _callSubscriber() {
         console.log('trahs')
     },
-    handelPush() {
-
-        let result = { message: this.getState().dialogsPage.newPostText, id: 6, lickesCount: '14' };
-        this.getState().dialogsPage.MyPostsArr.push(result);
-        this.getState().dialogsPage.newPostText = '';
-        this.rerenderEmpireTrtt(this.getState());
-    },
-    changeNevText(text) {
-        this.getState().dialogsPage.newPostText = text;
-        this.rerenderEmpireTrtt(this.getState());
-    },
+     
     subScribe(observer) {
-        this.rerenderEmpireTrtt = observer;
+        this._callSubscriber = observer;
+    },
+    dispatch(action) {
+        if (action.type === ADD_PUSH) {
+            let result = { 
+                message: this.getState().dialogsPage.newPostText,
+                id: 6,
+                lickesCount: '14' 
+            };
+            this.getState().dialogsPage.MyPostsArr.push(result);
+            this.getState().dialogsPage.newPostText = '';
+            this._callSubscriber(this.getState());
+            
+        } else if (action.type === ADD_CHANGE) {
+            this.getState().dialogsPage.newPostText = action.text;
+            this._callSubscriber(this.getState());
+        }else if (action.type === ADD_CHANGE_DIALOG) {
+            this.getState().profilePage.newPostTextDialogs = action.text;
+            this._callSubscriber(this.getState());
+        }else if (action.type === ADD_PUSH_DIALOG) {
+
+            let resultDil =  { inner: this.getState().profilePage.newPostTextDialogs, id: 4 };
+
+            this.getState().profilePage.MesagesArr.push(resultDil);
+            this.getState().profilePage.newPostTextDialogs = '';
+            this._callSubscriber(this.getState());
+        }
     }
 }
 
-
+export const addPushCreateAction = () => {
+    return {type: ADD_PUSH}
+    };
+   export const addChangeCreateAction = (text) => {
+        return {type: ADD_CHANGE,
+                text: text }
+        };
+        
+        export const addChanDialogCreateAction = (text) => {
+            return {type: ADD_CHANGE_DIALOG,
+                    text: text }
+            };
+            export const addPushDialogCreateAction = (text) => {
+                return {type: ADD_PUSH_DIALOG,
+                        text: text }
+                };
 
 window.state = stor;
 

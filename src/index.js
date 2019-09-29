@@ -7,10 +7,10 @@ import App from './App';
 
 
 let rerenderEmpireTrtt = (state) => {
-    debugger
+
     ReactDOM.render(
        
-        <App appState={state} handRes={stor.handelPush.bind(stor)} handleText={stor.changeNevText.bind(stor)}/>,
+        <App appState={state} dispatch={stor.dispatch.bind(stor)} />,
         
         document.getElementById('root')
     );

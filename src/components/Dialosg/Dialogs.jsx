@@ -2,6 +2,8 @@ import React from 'react';
 import s from './Dialogs.module.css'
 import DialogItems from "./DialogItems/DialogItems";
 import MessagesItems from "./MessagesItems/MessagesItems";
+import { addChanDialogCreateAction } from './../../redux/state';
+import { addPushDialogCreateAction } from './../../redux/state';
 
 
 const Dialogs = (props2) => {
@@ -9,22 +11,28 @@ const Dialogs = (props2) => {
 
     let DialosNew = props2.dialong.map((dialogi) => {
         return (
-            <DialogItems name={dialogi.name} id={dialogi.id} img={dialogi.image}/>
+            <DialogItems name={dialogi.name} id={dialogi.id} img={dialogi.image} />
         )
     });
 
 
     let MessagesNew = props2.message1.map((messagei) => {
         return (
-            <MessagesItems inner={messagei.inner} id={messagei.id}/>
+            <MessagesItems inner={messagei.inner} id={messagei.id} />
         )
     });
 
 
-    let valMess = React.createRef();
-    let pushMes = () => {
-        let text = valMess.current.value;
-        console.log(typeof (text));
+
+    let pushMes = (e) => {
+        let text = e.target.value;
+
+        props2.dispatch1(addChanDialogCreateAction(text))
+       
+    }
+
+    let pushDil = () => {
+        props2.dispatch1(addPushDialogCreateAction());
     }
 
     return (
@@ -39,10 +47,10 @@ const Dialogs = (props2) => {
 
                 {MessagesNew}
                 <div>
-                    <textarea ref={valMess}></textarea>
+                    <textarea onChange={pushMes} value={props2.textareas}></textarea>
                 </div>
                 <div>
-                    <button onClick={pushMes}> Push ze tempo</button>
+                    <button onClick={pushDil}> Push ze tempo</button>
                 </div>
             </div>
 
