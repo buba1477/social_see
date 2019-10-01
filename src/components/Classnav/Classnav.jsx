@@ -2,7 +2,7 @@ import React from 'react';
 import s from './Classnav.module.css';
 import {NavLink} from "react-router-dom";
 
-console.log(s);
+
 const Nav = () => {
     return <nav className={s.classNav}>
         <div className={`${s.items} ${s.active}`}>

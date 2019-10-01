@@ -1,8 +1,8 @@
 import React from 'react';
 import s from './MyPosts.module.css'
 import Post from './Post/Post';
-import {addPushCreateAction} from './../../../redux/state';
-import {addChangeCreateAction} from './../../../redux/state';
+import {addPushCreateAction} from './../../../redux/profile-reduxer';
+import {addChangeCreateAction} from './../../../redux/profile-reduxer';
 
 const MyPosts = (props) => {
 

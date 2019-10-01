@@ -2,8 +2,8 @@ import React from 'react';
 import s from './Dialogs.module.css'
 import DialogItems from "./DialogItems/DialogItems";
 import MessagesItems from "./MessagesItems/MessagesItems";
-import { addChanDialogCreateAction } from './../../redux/state';
-import { addPushDialogCreateAction } from './../../redux/state';
+import { addChanDialogCreateAction } from './../../redux/dialogs-reduxer';
+import { addPushDialogCreateAction } from './../../redux/dialogs-reduxer';
 
 
 const Dialogs = (props2) => {
