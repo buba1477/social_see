@@ -2,7 +2,16 @@
 const ADD_PUSH = 'ADD-PUSH';
 const ADD_CHANGE = 'ADD-CHANGE';
 
- const profileReduxer = (state,action) => {
+let initalState = {
+    MyPostsArr: [
+        { message: 'Hi, how are you', id: 1, lickesCount: '12' },
+        { message: 'Hello main react!', id: 2, lickesCount: 0 },
+
+    ],
+    newPostText: 'go-go'
+};
+
+ const profileReduxer = (state = initalState,action) => {
 
      switch (action.type) {
          case ADD_PUSH :

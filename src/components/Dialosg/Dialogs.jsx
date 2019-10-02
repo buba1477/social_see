@@ -47,7 +47,7 @@ const Dialogs = (props2) => {
 
                 {MessagesNew}
                 <div>
-                    <textarea onChange={pushMes} value={props2.textareas}></textarea>
+                    <textarea onChange={pushMes} placeholder='Ну давай же??' value={props2.textareas}></textarea>
                 </div>
                 <div>
                     <button onClick={pushDil}> Push ze tempo</button>

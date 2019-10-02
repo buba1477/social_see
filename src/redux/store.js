@@ -6,6 +6,7 @@ const ADD_PUSH = 'ADD-PUSH';
 const ADD_CHANGE = 'ADD-CHANGE';
 const ADD_CHANGE_DIALOG = 'ADD-CHANGE-DIALOG';
 const ADD_PUSH_DIALOG = 'ADD-PUSH-DIALOG';
+
 let stor = {
     _state: {
         dialogsPage: {
@@ -34,16 +35,16 @@ let stor = {
             newPostTextDialogs: 'Приветик'
         },
         sideBar: {}
-        
+
     },
     getState() {
         return this._state
     },
-  
+
     _callSubscriber() {
         console.log('trahs')
     },
-     
+
     subScribe(observer) {
         this._callSubscriber = observer;
     },
@@ -105,4 +106,4 @@ window.state = stor;
 
 
 
-export default stor;
+// export default stor;

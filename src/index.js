@@ -1,5 +1,5 @@
 import React from 'react';
-import stor from './redux/state';
+import stor from './redux/redux-store'
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
@@ -7,7 +7,7 @@ import App from './App';
 
 
 let rerenderEmpireTrtt = (state) => {
-
+debugger;
     ReactDOM.render(
        
         <App appState={state} dispatch={stor.dispatch.bind(stor)} />,
@@ -21,4 +21,7 @@ let rerenderEmpireTrtt = (state) => {
 
 rerenderEmpireTrtt(stor.getState());
 
-stor.subScribe(rerenderEmpireTrtt);
+stor.subscribe( () => {
+    let state = stor.getState();
+    rerenderEmpireTrtt(state)
+});
