@@ -1,8 +1,7 @@
 import React from 'react';
 import s from './MyPosts.module.css'
 import Post from './Post/Post';
-import {addPushCreateAction} from './../../../redux/profile-reduxer';
-import {addChangeCreateAction} from './../../../redux/profile-reduxer';
+
 
 const MyPosts = (props) => {
 
@@ -16,15 +15,16 @@ const MyPosts = (props) => {
     
 
     let hanlerRef = () => {
-
-        props.dispatch(addPushCreateAction());
+        props.hanlerRef()
+        // props.dispatch(addPushCreateAction());
     }
 
     let newRefrea = React.createRef();
     let onTextChange = () => {
 
         let text = newRefrea.current.value;
-        props.dispatch(addChangeCreateAction(text));
+        props.updateNewTextPost(text)
+        // props.dispatch(addChangeCreateAction(text));
     }
     return (
         <div className={s.postHead}>

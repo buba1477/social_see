@@ -1,16 +1,15 @@
 import React from 'react';
 import s from './Content.module.css'
-import MyPosts from './MyPosts/MyPosts';
 import ProfileInfo from './ProfileInfo/ProfileInfo';
+import MyPostsContainer from "./MyPosts/MyPostsContainer";
 
 
 const Content = (props) => {
 
     return (
         <div className={s.appContent}>
-
             <ProfileInfo />
-            <MyPosts mypost = {props.contpost} dispatch={props.dispatch} textareas={props.textareas} />
+            <MyPostsContainer store ={props.store} />
 
         </div>
     )
