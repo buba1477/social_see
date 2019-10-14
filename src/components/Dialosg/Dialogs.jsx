@@ -2,13 +2,12 @@ import React from 'react';
 import s from './Dialogs.module.css'
 import DialogItems from "./DialogItems/DialogItems";
 import MessagesItems from "./MessagesItems/MessagesItems";
-import { addChanDialogCreateAction } from './../../redux/dialogs-reduxer';
-import { addPushDialogCreateAction } from './../../redux/dialogs-reduxer';
+
 
 
 const Dialogs = (props2) => {
 
-
+debugger
     let DialosNew = props2.dialong.map((dialogi) => {
         return (
             <DialogItems name={dialogi.name} id={dialogi.id} img={dialogi.image} />
@@ -26,13 +25,14 @@ const Dialogs = (props2) => {
 
     let pushMes = (e) => {
         let text = e.target.value;
-
-        props2.dispatch1(addChanDialogCreateAction(text))
+        props2.pushMesDialog(text)
+        //props2.dispatch1(addChanDialogCreateAction(text))
        
     }
 
     let pushDil = () => {
-        props2.dispatch1(addPushDialogCreateAction());
+        props2.pushDilDialog()
+        //props2.dispatch1(addPushDialogCreateAction());
     }
 
     return (

@@ -15,17 +15,20 @@ let initalState = {
 
      switch (action.type) {
          case ADD_PUSH :
-             let result = {
+         { let result = {
                  message: state.newPostText,
                  id: 6,
                  lickesCount: '14'
              };
-             state.MyPostsArr.push(result);
-             state.newPostText = '';
-             return state;
+         let copyStore = {...state}
+             copyStore.MyPostsArr =[...state.MyPostsArr]
+             copyStore.MyPostsArr.push(result);
+             copyStore.newPostText = '';
+             return copyStore;}
          case ADD_CHANGE :
-             state.newPostText = action.text;
-             return state;
+             let copyStore = {...state}
+             copyStore.newPostText = action.text;
+             return copyStore;
          default:
              return state;
      }

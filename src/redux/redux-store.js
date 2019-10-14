@@ -10,6 +10,7 @@ let reducers = combineReducers({
 
 });
 
-let stor = createStore(reducers)
+let stor = createStore(reducers);
+window.stor=stor;
 
 export default stor;

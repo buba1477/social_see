@@ -1,27 +1,32 @@
 import React from 'react';
-import stor from './redux/redux-store'
+
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import {Provider} from "react-redux";
+import stor from "./redux/redux-store";
 
 
 
-let rerenderEmpireTrtt = (state) => {
+
+
+
+let rerenderEmpireTrtt = () => {
 
     ReactDOM.render(
-       
-        <App appState={stor.getState()} dispatch={stor.dispatch.bind(stor)} store={stor}/>,
-        
+       <Provider store={stor}>
+            <App/>
+       </Provider>,
         document.getElementById('root')
+
     );
 
 
 }
 
 
-rerenderEmpireTrtt(stor.getState());
+rerenderEmpireTrtt();
 
-stor.subscribe( () => {
-    let state = stor.getState();
-    rerenderEmpireTrtt(state)
-});
+// stor.subscribe( () => {
+//     rerenderEmpireTrtt()
+// });
