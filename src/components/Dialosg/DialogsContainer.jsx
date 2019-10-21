@@ -1,23 +1,22 @@
 import React from 'react';
-import { addChanDialogCreateAction } from './../../redux/dialogs-reduxer';
-import { addPushDialogCreateAction } from './../../redux/dialogs-reduxer';
+import {addChanDialogCreateAction} from './../../redux/dialogs-reduxer';
+import {addPushDialogCreateAction} from './../../redux/dialogs-reduxer';
 import Dialogs from "./Dialogs";
 
 import {connect} from "react-redux";
 
 
-
-let mapStateToProps = (state) =>{
+let mapStateToProps = (state) => {
     return {
         dialong: state.profilePage.DialosArr,
 
-            textareas: state.profilePage.newPostTextDialogs,
+        textareas: state.profilePage.newPostTextDialogs,
 
-            message1: state.profilePage.MesagesArr
-        }
+        message1: state.profilePage.MesagesArr
+    }
 };
 
-let mapDispathToProps =(dispatch) => {
+let mapDispathToProps = (dispatch) => {
     return {
         pushMesDialog: (text) => {
             let action = addChanDialogCreateAction(text);
@@ -28,5 +27,5 @@ let mapDispathToProps =(dispatch) => {
         }
     }
 };
-const DialogsContainer = connect(mapStateToProps,mapDispathToProps)(Dialogs);
+const DialogsContainer = connect(mapStateToProps, mapDispathToProps)(Dialogs);
 export default DialogsContainer;

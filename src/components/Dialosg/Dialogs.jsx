@@ -7,7 +7,7 @@ import MessagesItems from "./MessagesItems/MessagesItems";
 
 const Dialogs = (props2) => {
 
-debugger
+
     let DialosNew = props2.dialong.map((dialogi) => {
         return (
             <DialogItems name={dialogi.name} id={dialogi.id} img={dialogi.image} />

@@ -4,6 +4,7 @@ import Nav from './components/Classnav/Classnav';
 import Content from './components/Content/Content';
 import {BrowserRouter, Route} from "react-router-dom";
 import DialogsContainer from "./components/Dialosg/DialogsContainer";
+import UserContainer from "./components/Users/UserContainer";
 
 
 const App = (props) => {
@@ -17,7 +18,7 @@ const App = (props) => {
 
                     <Route path='/profile' render = {() => <Content  /> } />
                     <Route path='/messages' render = {() => <DialogsContainer />} />
-
+                    <Route path='/users' render = {() => <UserContainer />} />
 
                 </div>
             </div>

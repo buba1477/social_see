@@ -21,39 +21,26 @@ let initalState = {
 
 
 const dialogReduxer = (state = initalState,action) => {
-   switch (action.type ) {
-       case ADD_CHANGE_DIALOG :
-       { let copyState = {...state};
+    switch (action.type) {
 
-           copyState.newPostTextDialogs = action.text;
-           return copyState;}
-       case ADD_PUSH_DIALOG :
-           let resultDil =  { inner: state.newPostTextDialogs, id: 4 };
-           let copyState = {...state};
-           copyState.MesagesArr=[...state.MesagesArr]
-           copyState.MesagesArr.push(resultDil);
-           copyState.newPostTextDialogs = '';
-           return copyState;
-       default:
-           return state;
+        case ADD_CHANGE_DIALOG :
+            return {
+                ...state,
+                newPostTextDialogs: action.text
+            };
 
-   }
-    // if (action.type === ADD_CHANGE_DIALOG) {
-    //     state.newPostTextDialogs = action.text;
-    //
-    // }else if (action.type === ADD_PUSH_DIALOG) {
-    //
-    //     let resultDil =  { inner: state.newPostTextDialogs, id: 4 };
-    //
-    //     state.MesagesArr.push(resultDil);
-    //     state.newPostTextDialogs = '';
-    //
-    // }
+        case ADD_PUSH_DIALOG :
+            let resultDil = {inner: state.newPostTextDialogs, id: 4};
+            return {
+                ...state,
+                MesagesArr: [...state.MesagesArr, ...[resultDil]],
+                newPostTextDialogs: ''
+            };
 
-    //
-    // return state;
+        default:
+            return state;
+    }
 }
-
 
 
 export const addChanDialogCreateAction = (text) => {

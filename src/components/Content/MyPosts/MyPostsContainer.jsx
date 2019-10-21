@@ -4,8 +4,6 @@ import {addChangeCreateAction} from './../../../redux/profile-reduxer';
 import MyPosts from "./MyPosts";
 import {connect} from "react-redux";
 
-
-
 let mapStateToProps = (state) =>{
     return {
         mypost: state.dialogsPage.MyPostsArr,
